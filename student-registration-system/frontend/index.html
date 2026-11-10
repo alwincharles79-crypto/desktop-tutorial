@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Registration Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">S</div><div><strong>STUDENT</strong><span>REGISTRATION PORTAL</span></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <button class="nav active" data-page="dashboard"><span>▦</span> Dashboard</button>
+    <button class="nav" data-page="students"><span>♙</span> Student records</button>
+    <button class="nav" data-page="register"><span>＋</span> Register student</button>
+    <div class="sidebar-foot"><div class="status-dot"></div> System operational</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="eyebrow">STUDENT MANAGEMENT</div><h1 id="page-title">Dashboard</h1></div><div class="top-actions"><span class="date-label" id="today-label"></span><button class="primary" id="top-add">＋ Add student</button></div></header>
+    <section id="dashboard-page" class="page">
+      <div class="welcome"><div><div class="eyebrow light">OVERVIEW</div><h2>Good to see you.</h2><p>Manage registrations and keep student information organised.</p></div><div class="welcome-icon">✦</div></div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-head">TOTAL STUDENTS <span class="stat-icon blue">♙</span></div><div class="stat-value" id="total-students">0</div><div class="stat-note">Registered student records</div></article>
+        <article class="stat-card"><div class="stat-head">NEW TODAY <span class="stat-icon green">↗</span></div><div class="stat-value" id="today-registrations">0</div><div class="stat-note">Registrations added today</div></article>
+        <article class="stat-card"><div class="stat-head">ACTIVE COURSES <span class="stat-icon amber">▤</span></div><div class="stat-value" id="total-courses">0</div><div class="stat-note">Distinct courses represented</div></article>
+      </div>
+      <div class="section-card"><div class="section-head"><div><h3>Recent registrations</h3><p>Your latest student records</p></div><button class="text-button" id="view-all">View all →</button></div><div id="recent-list" class="recent-list"><div class="empty">No registrations yet. Add your first student to get started.</div></div></div>
+    </section>
+    <section id="students-page" class="page hidden"><div class="section-card"><div class="section-head records-head"><div><h3>All students</h3><p>Search, review and manage registered students.</p></div><div class="record-actions"><input id="search" class="search" placeholder="Search name, email, phone or course…"><button class="secondary" id="export">↓ Export CSV</button></div></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>STUDENT</th><th>EMAIL</th><th>PHONE</th><th>COURSE</th><th>REGISTERED</th><th></th></tr></thead><tbody id="student-table"><tr><td colspan="7" class="empty">No student records found.</td></tr></tbody></table></div></div></section>
+    <section id="register-page" class="page hidden"><div class="form-layout"><div class="section-card form-card"><div class="section-head"><div><h3 id="form-heading">Register a student</h3><p>Enter the details below. All fields are required.</p></div></div><form id="student-form"><div class="form-grid"><label>Student name<input name="student_name" required minlength="2" maxlength="100" placeholder="e.g. Ananya Sharma"></label><label>Email address<input name="email" type="email" required maxlength="254" placeholder="student@example.com"></label><label>Phone number<input name="phone" inputmode="numeric" pattern="[6-9][0-9]{9}" minlength="10" maxlength="10" required placeholder="10-digit mobile number"></label><label>Course / Programme<input name="course" required maxlength="100" placeholder="e.g. BBA"></label></div><div class="form-error" id="form-error" role="alert"></div><div class="form-footer"><button type="button" class="secondary" id="cancel-form">Cancel</button><button class="primary" type="submit" id="submit-button">Save registration</button></div></form></div><aside class="tip-card"><div class="tip-icon">✧</div><h3>Registration checklist</h3><p>Make sure the information is accurate before saving.</p><ul><li>Use the student's full name.</li><li>Enter a valid email address.</li><li>Use a 10-digit Indian mobile number.</li><li>Each email and phone number must be unique.</li></ul></aside></div></section>
+    <footer>Student Registration System <span>•</span> Built with Python, FastAPI & SQLite</footer>
+  </main>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="/static/app.js"></script>
+</body></html>
