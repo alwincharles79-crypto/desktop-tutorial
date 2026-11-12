@@ -1,0 +1,12 @@
+STUDENT REGISTRATION SYSTEM – TEST CASES
+
+1. View All Students – Tested successfully.
+2. Search Student by Name – Tested successfully.
+3. Search Student by Phone – Tested successfully.
+4. Search Student by Email – Tested successfully.
+5. Register New Student – Tested successfully.
+6. Duplicate Registration Prevention – Tested successfully.
+7. Update Student Details – Tested successfully.
+8. Duplicate Prevention During Update – Tested successfully.
+
+All the above test cases were performed during project development.
